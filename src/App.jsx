@@ -35,7 +35,7 @@ class App extends Component {
         const { todos } = this.state;
         return (
             <main>
-                <Header title={title} />
+                <Header title={title} todos={todos} />
 
                 <section className="todo-list">
                     {todos.map(todo =>
