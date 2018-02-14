@@ -6,19 +6,20 @@ import Button from './Button';
 
 const Todo = ({ completed, id, onDelete, onStatusChange, title }) => (
     <div className={`todo${completed ? ' completed' : ''}`}>
-        <Checkbox checked={completed} onChange={()=> onStatusChange(id)}/>
+        <Checkbox checked={completed} onChange={() => onStatusChange(id)} />
 
         <span className="todo-title">{title}</span>
 
-        <Button className="delete icon" icon="delete" onClick={()=> onDelete(id)} />
+        <Button className="delete icon" icon="delete" onClick={() => onDelete(id)} />
     </div>
 )
 
 Todo.propTypes = {
     completed: PropTypes.bool.isRequired,
-    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    onDelete: PropTypes.func.isRequired,
     onStatusChange: PropTypes.func.isRequired,
-    onDelete: PropTypes.func.isRequired
+    title: PropTypes.string.isRequired
 };
 
 export default Todo;
